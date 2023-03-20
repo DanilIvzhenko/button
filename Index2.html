@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beautiful Button</title>
+    <style>
+        body {
+            background-color: #2C3E50;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 300;
+            color: #FFF;
+        }
+        button {
+            position: relative;
+            display: inline-block;
+            border: none;
+            border-radius: 50px;
+            padding: 20px 50px;
+            font-size: 24px;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #FFF;
+            background-color: #F39C12;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+            z-index: 1;
+        }
+        button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.4);
+            color: #F39C12;
+            background-color: #FFF;
+        }
+        button span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50px;
+            background-image: radial-gradient(circle at center, #FFF 0%, #F39C12 50%, transparent 60%);
+            animation: pulse 2s ease-in-out infinite;
+            opacity: 0.5;
+            z-index: -1;
+        }
+        button:hover span {
+            transform: scale(2);
+            opacity: 0;
+        }
+        button:before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            border-radius: 50%;
+            background-image: radial-gradient(circle at center, #FFF 0%, #F39C12 60%, transparent 70%);
+            z-index: -2;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover:before {
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        button:after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            right: -50px;
+            bottom: -50px;
+            border-radius: 50%;
+            background-image: radial-gradient(circle at center, #F39C12 0%, transparent 50%);
+            z-index: -2;
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        button:hover:after {
+            transform: scale(1.5);
+            opacity: 1;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+<button><span></span>Click Me!</button>
+</body>
+</html>
